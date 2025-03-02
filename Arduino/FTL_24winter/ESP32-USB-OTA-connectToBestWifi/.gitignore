@@ -3,3 +3,14 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# PlatformIO
+.pio/
+build/
+upload_port
+sdkconfig
+sdkconfig.old
+config.h
+*.bin
+*.elf
+*.map
