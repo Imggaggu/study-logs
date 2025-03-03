@@ -12,5 +12,10 @@ public class Var8 {
         //실수
         float f = 10.0f;
         double d= 10.0;
+
+        String OrderDetail;//class 는 첫글자 대문자+ 카멜 표기법
+        int orderDetail;// class 아닌 변수 등 나머지는 첫글자 소문자+낙타표기법
+        //함수는 모두 대문자 + _
+        //패키지는 모두 소문자
     }
 }
