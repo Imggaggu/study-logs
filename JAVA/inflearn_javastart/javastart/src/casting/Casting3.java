@@ -9,7 +9,7 @@ public class Casting3 {
         intValue = (int)maxIntValue; //형변환
         System.out.println("maxIntValue casting:"+intValue);
 
-        intValue = (int)maxIntOver; //형변환
+        intValue = (int)maxIntOver; //형변환 overflow 시계처럼 다시 돌아감
         System.out.println("maxIntOver casting:"+intValue);
 
     }
