@@ -137,3 +137,124 @@ ros2 service call /turtle1/teleport_absolute turtlesim/srv/TeleportAbsolute \
 - 거북이를 (2, 3) 위치로 `theta=2`의 방향으로 순간이동시킵니다.
 
 ---
+
+
+### 🎯Chapter 2-3: 액션 (Action) – 거북이 따라가기 & 경로 이동
+
+### ✅ 1. 사용 가능한 액션 목록 확인
+
+```bash
+
+ros2 action list
+
+```
+
+예시 출력:
+
+```bash
+
+/turtle1/rotate_absolute
+
+```
+
+---
+
+### ✅ 2. 액션 타입 확인
+
+```bash
+
+ros2 action info /turtle1/rotate_absolute
+
+```
+
+예시 출력:
+
+```bash
+
+Action: turtlesim/action/RotateAbsolute
+Goal Service: /turtle1/rotate_absolute/_action/send_goal
+Result Service: /turtle1/rotate_absolute/_action/get_result
+Feedback Topic: /turtle1/rotate_absolute/_action/feedback
+
+```
+
+---
+
+### ✅ 3. 액션 메시지 구조 확인
+
+```bash
+
+ros2 interface show turtlesim/action/RotateAbsolute
+
+```
+
+예시 출력:
+
+```bash
+
+turtlesim/action/RotateAbsolute
+
+# Goal
+float32 theta
+
+---
+
+# Result
+float32 delta
+
+---
+
+# Feedback
+float32 remaining
+
+```
+
+> 이 액션은 "거북이를 theta 방향으로 절대 회전시키는 액션"입니다.
+> 
+
+---
+
+### ✅ 4. 액션 실행 (goal 보내기)
+
+```bash
+
+ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute \
+"{theta: 1.57}"
+
+```
+
+- `theta: 1.57` → 90도 (라디안 기준)로 회전
+- 실행 중에는 **`remaining` 피드백**을 주기적으로 받을 수 있음
+- 액션이 완료되면 `delta` (실제로 회전한 양)를 결과로 받음
+
+---
+
+### 🧠 토픽은?
+
+> 🧠 **토픽(Topic)**은 한 노드가 메시지를 **계속 발행(Publish)**하고, 다른 노드가 **구독(Subscribe)**하여 받는 구조입니다.
+> 
+> 
+> 방송처럼 **한 쪽에서 일방적으로 정보를 흘리고**, 듣고 싶은 노드는 **필요할 때 자유롭게 구독**합니다.
+> 
+
+---
+
+### 🧠 서비스는?
+
+> 🧠 **서비스(Service)**는 **요청(Request)**을 보내면 그에 대한 **응답(Response)**이 딱 한 번 오는 구조입니다.
+> 
+> 
+> 전화처럼 **한 번 연결되어 질문하고 대답을 받는, 1:1의 쌍방향 통신**이에요.
+> 
+
+---
+
+### 🧠 액션은?
+
+> 🧠 **액션(Action)**은 서비스 + 토픽을 합친 구조입니다.
+> 
+> 
+> **목표(goal)를 보내고 → 진행 상황(feedback)을 받고 → 완료되면 결과(result)를 받는** 흐름으로 작동합니다.
+> 
+> 긴 작업이나 중간 진행 상황이 필요한 작업에 적합합니다.
+>
