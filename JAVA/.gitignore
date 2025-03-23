@@ -1,0 +1,13 @@
+# IntelliJ project files
+.idea/
+*.iml
+
+# Build output
+out/
+
+# Java build artifacts
+*.class
+
+# OS-specific files (optional)
+.DS_Store
+Thumbs.db
