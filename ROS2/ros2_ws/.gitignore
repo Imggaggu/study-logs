@@ -1,0 +1,23 @@
+build/
+install/
+log/
+*.pyc
+__pycache__/
+# ROS 2 build files
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# User/system configs
+.vscode-server/
+.cache/
+.ros/
+.local/
+.bash_history
+.bashrc
+.profile
