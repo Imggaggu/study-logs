@@ -1,0 +1,19 @@
+# 컴파일된 실행 파일 무시
+*.exe
+*.out
+*.o
+*.obj
+
+# Visual Studio Code 설정 파일 무시
+.vscode/
+
+# 백업 파일 무시
+*~
+
+# 빌드 관련 임시 파일 무시
+*.log
+*.tmp
+
+# 특정 section 하위에 생성되는 실행파일 무시
+section*/**/*.exe
+**/*.exe
