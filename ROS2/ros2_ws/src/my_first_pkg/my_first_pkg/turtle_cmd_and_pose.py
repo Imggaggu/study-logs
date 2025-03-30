@@ -1,12 +1,14 @@
 import rclpy as rp
 from rclpy.node import Node
 from turtlesim.msg import Pose
+from geometry_msgs.msg import Twist
 from my_first_pkg_msgs.msg import CmdAndPoseVel
-  
+
 class CmdAndPose(Node):
   def __init__(self):
     super().__init__("turtle_cmd_pose")
     self.sub_pose = self.create_subscription(Pose,"/turtle1/pose", self.callback_pose,10)
+    self.sub_cmdvel = self.create_subscription(Twist,"/turtle1/cmd_vel",self.callback_cmd,10)
     self.cmd_pose = CmdAndPoseVel()
 
 
