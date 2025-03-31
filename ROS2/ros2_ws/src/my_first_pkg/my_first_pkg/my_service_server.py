@@ -36,6 +36,7 @@ class MultiSpawning(Node):
       self.req_spawn.theta=theta[n]
 
       self.spawn.call_async(self.req_spawn)
+      time.sleep(1.5)
       
     response.x=x
     response.y=y
