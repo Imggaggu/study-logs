@@ -24,8 +24,8 @@ setup(
             "my_subscriber=my_first_pkg.my_subscriber:main",
             "my_publisher=my_first_pkg.my_publisher:main",
             "turtle_cmd_and_pose=my_first_pkg.turtle_cmd_and_pose:main",
-            "my_service_server=my_first_pkg.my_service_server:main"
-
+            "my_service_server=my_first_pkg.my_service_server:main",
+            "dist_turtle_action_server=my_first_pkg.dist_turtle_action_server:main"
         ],
     },
 )
